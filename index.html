@@ -4,174 +4,251 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Arshad Mulla</title>
-<meta name="description" content="Arshad Mulla — AI Researcher (Generative Agents, LLMs & Scalable ML Systems)">
+<meta name="description" content="Arshad Mulla — Applied AI & NLP Researcher | LLMs, RAG, Efficient Transformer Systems">
 <link rel="icon" href="data:,">
+
 <style>
-  /* === Minimal Academic Style === */
-  :root{
-    --text:#111;
-    --muted:#555;
-    --link:#0b57d0;
-    --border:#e8e8e8;
-    --max:900px;
-  }
-  html,body{margin:0;padding:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    color:var(--text); background:#fff; line-height:1.65;
-  }
-  .wrap{max-width:var(--max); margin:32px auto; padding:0 16px}
-  h1,h2{font-weight:700; margin:0 0 8px}
-  h1{font-size:32px}
-  h2{font-size:20px; margin-top:28px; border-bottom:1px solid var(--border); padding-bottom:6px}
-  p,ul{margin:10px 0}
-  a{color:var(--link); text-decoration:none}
-  a:hover{text-decoration:underline}
-  .grid{display:grid; grid-template-columns:130px 1fr; gap:16px; align-items:start}
-  .avatar{width:120px;height:120px;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
-  .top-links{display:grid; gap:6px; margin:8px 0 14px}
-  .top-links a{display:inline-block}
-  .email{color:var(--text); font-weight:500}
-  .meta{color:var(--muted); font-size:14px}
-  .news li{margin:6px 0}
-  .proj-title{font-weight:600}
-  .proj-tech{color:var(--muted); font-size:14px}
-  footer{margin:32px 0 44px; color:var(--muted); font-size:13px}
-  ul.experience-list{list-style:none; padding:0; margin:0}
-  ul.experience-list li{margin-bottom:16px; border-left:3px solid var(--border); padding-left:10px}
-  @media (max-width:700px){ .grid{grid-template-columns:1fr} .avatar{width:110px;height:110px} }
+:root{
+  --text:#111;
+  --muted:#666;
+  --link:#0b57d0;
+  --border:#eaeaea;
+  --max:920px;
+}
+
+html,body{margin:0;padding:0}
+
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  background:#fff;
+  color:var(--text);
+  line-height:1.7;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.header{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+}
+
+.profile-img{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:4px;
+  border:1px solid var(--border);
+}
+
+h1{
+  font-size:34px;
+  margin:0 0 6px 0;
+}
+
+h2{
+  font-size:20px;
+  margin-top:50px;
+  border-bottom:1px solid var(--border);
+  padding-bottom:6px;
+}
+
+a{
+  color:var(--link);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+.meta{
+  color:var(--muted);
+  font-size:14px;
+}
+
+ul{
+  padding-left:18px;
+}
+
+.paper-img{
+  width:100%;
+  max-width:650px;
+  margin-top:15px;
+  border:1px solid var(--border);
+  border-radius:6px;
+}
+
+.footer{
+  margin-top:80px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:700px){
+  .header{flex-direction:column;}
+  .profile-img{width:130px;height:130px;}
+}
 </style>
 </head>
+
 <body>
 <div class="wrap">
 
-  <!-- Header block -->
-  <div class="grid">
-    <img class="avatar" src="6c6c50ef-7adc-43a4-bbfa-8f677296b545-compressed.JPG" alt="Arshad Mulla">
-    <div>
-      <h1>Arshad Mulla</h1>
+<div class="header">
+  <img src="6c6c50ef-7adc-43a4-bbfa-8f677296b545-compressed.JPG" alt="Arshad Mulla" class="profile-img">
 
-      <div class="top-links">
-        <div>
-          <a href="Arshad75Resume.pdf" target="_blank" rel="noopener">Resume</a> /
-          <a href="Arshad75Resume.pdf" target="_blank" rel="noopener">CV</a>
-        </div>
-        <div class="email">📧 <a href="mailto:arshadmulla75@gmail.com">arshadmulla75@gmail.com</a></div>
-        <div>
-          <a href="https://github.com/arshadmulla" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp;
-          <a href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
+  <div>
+    <h1>Arshad Mulla</h1>
+    <p class="meta">
+      Applied AI & NLP Researcher<br>
+      Large Language Models · Retrieval-Augmented Generation · Efficient Transformer Systems
+    </p>
 
-      <h2 style="border:none;margin-top:6px">Bio</h2>
-      <p>
-        I’m an AI researcher focusing on generative agents, large language models, and scalable ML systems.
-        I bridge fundamental research (NLP, CV, RL) with real-world applications in health tech, autonomous systems,
-        and AI-driven content intelligence. Long-term, I aim to build linguistically grounded, efficient, and reliable
-        language systems.
-      </p>
-      <p class="meta"><strong>Keywords:</strong> LLMs, Generative Agents, RAG, Efficient Inference, Representation Learning, Model Evaluation</p>
-    </div>
+    <p>
+      📄 <a href="Arshad75Resume.pdf" target="_blank">CV</a> |
+      💻 <a href="https://github.com/arshadmulla" target="_blank">GitHub</a> |
+      🔗 <a href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank">LinkedIn</a> |
+      📧 <a href="mailto:arshadmulla75@gmail.com">arshadmulla75@gmail.com</a>
+    </p>
   </div>
+</div>
 
-  <!-- Education -->
-  <h2>Education</h2>
-  <p><strong>B.Sc. in Computer Science</strong>, Royal College — University of Mumbai <span class="meta">(2021–2024)</span></p>
+<h2>About</h2>
+<p>
+I am an applied AI researcher focused on large language models (LLMs), retrieval-augmented generation (RAG), 
+and hardware-aware Transformer optimization. My work explores how scalable language systems can be made efficient, 
+reliable, and grounded in structured knowledge.
+</p>
 
-  <!-- Experience -->
-  <h2>Experience</h2>
-  <ul class="experience-list">
-    <li>
-      <strong>Technical Program Analyst — AI & Data</strong>, GoToUniversity
-      <span class="meta">Sep 2025 – Present</span><br>
-      AI automation for a 1K+ program database; ~40% reliability lift via prompt-engineered retrieval (ChatGPT, Perplexity).<br>
-      Researching structured academic knowledge for scalable web integration.
-    </li>
-    <li>
-      <strong>AI Researcher (Freelance)</strong>, TheSoul Publishing
-      <span class="meta">Aug 2025 – Dec 2025</span><br>
-      NLP-based AI-content detection (+25% authenticity); studying human–AI co-creation; paper-in-progress on collaboration.
-    </li>
-    <li>
-      <strong>AI Research Intern</strong>, XLEX Batteries
-      <span class="meta">Aug 2025 – Sep 2025</span><br>
-      Retrieval-Augmented Generation assistant; −45% internal query latency with vector search + LLM re-ranking.
-    </li>
-    <li>
-      <strong>Data Annotation Specialist (Freelance)</strong>, Outlier.ai
-      <span class="meta">Jan 2025 – Aug 2025</span><br>
-      High-precision multi-modal labeling; improved QA guidelines and throughput.
-    </li>
-  </ul>
+<ul>
+<li>Efficient Transformer inference & mixed precision optimization</li>
+<li>Retrieval-Augmented Generation architectures</li>
+<li>LLM evaluation, detection & reliability</li>
+<li>Trustworthy and controllable generative models</li>
+</ul>
 
-  <!-- What's New -->
-  <h2>What’s New</h2>
-  <ul class="news">
-    <li>2025: Research on Transformer inference — CPU vs Apple MPS vs FP16 mixed precision.</li>
-    <li>2025: Built Gemini-powered Health Analytics app (95% diagnostic accuracy, 1.5k+ users).</li>
-    <li>2025: Developed domain-specific RAG assistant reducing info latency by 45%.</li>
-  </ul>
+<h2>Education</h2>
+<p>
+<strong>B.Sc. in Computer Science</strong><br>
+Royal College — University of Mumbai (2021–2024)
+</p>
 
-  <!-- Projects -->
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <span class="proj-title">Accelerated NLP Inference: CPU vs MPS vs Mixed Precision</span><br>
-      <span class="proj-tech">PyTorch, HF Transformers, BERT/DistilBERT/RoBERTa, Apple MPS</span><br>
-      Systematic inference study across hardware/precision; batch-size and sequence-length effects.<br>
-      <a href="https://github.com/arshadmulla/BERT_Inference_MPS_vs_CPU.ipynb" target="_blank" rel="noopener">View Repository</a>
-    </li>
-    <li>
-      <span class="proj-title">Gemini AI Health App</span><br>
-      <span class="proj-tech">Streamlit, Gemini Pro Vision, Python</span><br>
-      Health analytics app with 95% accuracy, 50k+ datapoints, and &lt;2s latency.
-    </li>
-    <li>
-      <span class="proj-title">AI SaaS Image Platform</span><br>
-      <span class="proj-tech">Next.js, MySQL, Cloudinary, Stripe</span><br>
-      Scalable platform with 95% background removal accuracy, +25% engagement, +15% revenue.
-    </li>
-    <li>
-      <span class="proj-title">Robot Navigation System</span><br>
-      <span class="proj-tech">RL, Sensor Fusion, Raspberry Pi, OpenCV</span><br>
-      +30% path efficiency; +25% obstacle avoidance; −20% latency.<br>
-      <a href="research-paper.pdf" target="_blank" rel="noopener">View Published Paper (JETNR)</a><br>
-      <img src="research (1).jpeg" alt="Research Paper Certificate" style="width:100%;max-width:600px;margin-top:10px;border:1px solid #ccc;border-radius:8px">
-    </li>
-  </ul>
+<h2>Research Experience</h2>
 
-  <!-- Certifications -->
-  <h2>Certifications</h2>
-  <ul>
-    <li>Harvard — CS109x: Data Science with Python</li>
-    <li>Princeton — Deep Learning Foundations</li>
-    <li>Oracle — OCI Foundations</li>
-    <li>Great Learning — Python for ML, Intro to DL, Intro to DS</li>
-    <li>Open Weaver — HTML/CSS, JavaScript, GPT4All Content Generation</li>
-  </ul>
+<p>
+<strong>Technical Program Analyst — AI & Data</strong>, GoToUniversity 
+<span class="meta">(Sep 2025 – Present)</span>
+</p>
+<ul>
+<li>Designed LLM-driven automation pipelines for a 1K+ global university database.</li>
+<li>Improved data reliability by ~40% using structured retrieval workflows and evaluation metrics.</li>
+</ul>
 
-  <!-- Skills -->
-  <h2>Technical Proficiencies</h2>
-  <p><strong>AI & ML:</strong> Deep Learning, Generative AI, NLP/LLMs, CV, Transformers, RL, RAG, Vector DBs (FAISS, Pinecone)</p>
-  <p><strong>Frameworks:</strong> PyTorch, TensorFlow, Keras, scikit-learn, Hugging Face, LangChain, Streamlit</p>
-  <p><strong>Programming:</strong> Python, R, SQL, MySQL, JavaScript, Node.js, Next.js</p>
-  <p><strong>Cloud & DevOps:</strong> OCI, AWS, Docker, CI/CD, Git</p>
+<p>
+<strong>AI Researcher (Freelance)</strong>, TheSoul Publishing 
+<span class="meta">(Aug 2025 – Dec 2025)</span>
+</p>
+<ul>
+<li>Developed NLP-based AI-generated content detection systems.</li>
+<li>Studied linguistic signals in human–AI co-creation pipelines.</li>
+</ul>
 
-  <!-- Contact -->
-  <h2>Contact</h2>
-  <p>
-    📧 <a href="mailto:arshadmulla75@gmail.com">arshadmulla75@gmail.com</a><br>
-    🔗 <a href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank">LinkedIn</a><br>
-    💻 <a href="https://github.com/arshadmulla" target="_blank">GitHub</a><br>
-    📄 <a href="Arshad75Resume.pdf" target="_blank">Download Resume</a>
-  </p>
+<p>
+<strong>AI Research Intern</strong>, XLEX Batteries 
+<span class="meta">(Aug 2025 – Sep 2025)</span>
+</p>
+<ul>
+<li>Built domain-specific Retrieval-Augmented Generation assistant.</li>
+<li>Reduced internal query latency by ~45% using vector search + LLM re-ranking.</li>
+</ul>
 
-  <p class="meta">Last updated: November 2025</p>
+<h2>Research & Engineering Projects</h2>
 
-  <footer>
-    Hosted on GitHub Pages — Minimal academic theme<br>
-    © 2025 Arshad Mulla
-  </footer>
+<p>
+<strong>Neural Watermarking for Trustworthy LLMs</strong><br>
+<span class="meta">BART · Hugging Face Transformers · ROUGE · Detection Classifier</span><br>
+Implemented and analyzed greenlist-based watermarking for neural abstractive summarization 
+(CNN/DailyMail dataset). Studied trade-offs between watermark strength, detectability (F1), 
+and summarization quality (ROUGE-L).
+<br>
+<a href="Watermarking_Summarization_Report_Arshad_Mulla_Final (2).pdf" target="_blank">
+View Research Report (PDF)
+</a>
+</p>
+
+<p>
+<strong>Domain-Specific Retrieval-Augmented Generation System</strong><br>
+<span class="meta">LangChain · LangGraph · FAISS · GPT APIs · FastAPI · Docker · AWS</span><br>
+Designed and deployed a production-oriented RAG architecture integrating vector databases, 
+embedding models, and LLM-based response re-ranking. Optimized latency and retrieval grounding 
+for structured enterprise knowledge systems.
+<br>
+<a href="https://github.com/arshadmulla" target="_blank">View Code</a>
+</p>
+
+<p>
+<strong>Efficient Transformer Inference Benchmarking</strong><br>
+<span class="meta">PyTorch · BERT · DistilBERT · RoBERTa · Apple MPS · Mixed Precision (FP16)</span><br>
+Systematic benchmarking of hardware-aware Transformer inference across CPU and Apple MPS backends. 
+Analyzed scaling behavior across batch sizes and sequence lengths for deployment trade-off evaluation.
+<br>
+<a href="https://github.com/arshadmulla/BERT_Inference_MPS_vs_CPU.ipynb" target="_blank">
+Repository
+</a>
+</p>
+
+<p>
+<strong>Generative AI Health Analytics Application</strong><br>
+<span class="meta">Streamlit · Gemini API · GPT-based reasoning · Python</span><br>
+Built a multimodal GenAI-powered analytics interface integrating structured reasoning 
+with LLM outputs, emphasizing response reliability and low-latency inference.
+</p>
+
+<h2>Publications</h2>
+
+<p>
+<strong>Robot Navigation using Reinforcement Learning and Sensor Fusion</strong><br>
+Journal of Emerging Technologies and Novel Research (JETNR), 2023<br>
+<a href="research-paper.pdf" target="_blank">View Paper (PDF)</a>
+</p>
+
+<img src="research (1).jpeg" alt="JETNR Publication Certificate" class="paper-img">
+
+<h2>Technical Competencies</h2>
+
+<p>
+<strong>Research Areas:</strong> Large Language Models, Retrieval-Augmented Generation, Efficient Inference, Trustworthy NLP
+</p>
+
+<p>
+<strong>LLM Frameworks:</strong> Hugging Face Transformers, GPT APIs, Gemini API
+</p>
+
+<p>
+<strong>RAG & Retrieval:</strong> LangChain, LangGraph, FAISS, Pinecone
+</p>
+
+<p>
+<strong>Model Architectures:</strong> BERT, RoBERTa, DistilBERT, BART (Encoder–Decoder Transformers)
+</p>
+
+<p>
+<strong>Deployment:</strong> Docker, FastAPI, AWS EC2, REST APIs
+</p>
+
+<p>
+<strong>Programming:</strong> Python, SQL, JavaScript
+</p>
+
+<div class="footer">
+Last updated: March 2026<br>
+© Arshad Mulla
+</div>
 
 </div>
 </body>
