@@ -3,268 +3,482 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arshad Mulla</title>
-<meta name="description" content="Arshad Mulla — Applied AI & NLP Researcher | LLMs, RAG, Efficient Transformer Systems">
-<link rel="icon" href="data:,">
+<title>Arshad Mulla — Applied AI &amp; NLP Researcher</title>
+<meta name="description" content="Arshad Mulla — Applied AI &amp; NLP Researcher. Large Language Models, Retrieval-Augmented Generation, efficient Transformer systems.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2329508a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23f7f5f0' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --text:#111;
-  --muted:#666;
-  --link:#0b57d0;
-  --border:#eaeaea;
-  --max:920px;
+  --paper:#f7f5f0;
+  --ink:#1a1b1e;
+  --muted:#6b6f76;
+  --rule:#e3e0d6;
+  --accent:#29508a;
+  --accent-soft:#e2e9f5;
+  --token:#a97632;
+  --token-soft:#f1e4d0;
+  --radius:3px;
+  --maxw:760px;
+  --dur:0.5s;
 }
 
-html,body{margin:0;padding:0}
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark{
+  --paper:#15161a;
+  --ink:#eae7df;
+  --muted:#9a9da3;
+  --rule:#2b2d32;
+  --accent:#7ea1dc;
+  --accent-soft:#20293a;
+  --token:#d3a05f;
+  --token-soft:#2e2717;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
 
 body{
-  font-family: Georgia, "Times New Roman", serif;
-  background:#fff;
-  color:var(--text);
-  line-height:1.7;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,sans-serif;
+  font-size:16.5px;
+  line-height:1.65;
+  transition:background var(--dur) ease, color var(--dur) ease;
 }
 
-.wrap{
-  max-width:var(--max);
-  margin:50px auto;
-  padding:0 20px;
+h1,h2,h3{
+  font-family:"Fraunces","Georgia",serif;
+  font-weight:500;
+  line-height:1.15;
+  margin:0;
 }
 
-.header{
-  display:flex;
-  gap:30px;
-  align-items:flex-start;
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+
+/* ---- Nav ---- */
+.nav{
+  position:sticky; top:0; z-index:20;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.nav-mark{font-family:"Fraunces",serif; font-size:18px; font-weight:600; color:var(--ink)}
+.nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0; font-size:14.5px}
+.nav-links a{color:var(--muted)}
+.nav-links a.active, .nav-links a:hover{color:var(--ink)}
+.nav-right{display:flex; align-items:center; gap:14px}
+.theme-btn{
+  background:none; border:1px solid var(--rule); border-radius:var(--radius);
+  color:var(--ink); font-size:13px; padding:5px 10px; cursor:pointer;
+  font-family:"IBM Plex Sans",sans-serif;
+}
+.theme-btn:hover{border-color:var(--accent)}
+.nav-toggle{display:none; background:none; border:none; color:var(--ink); font-size:22px; cursor:pointer}
+
+@media (max-width:640px){
+  .nav-links{
+    position:absolute; top:100%; left:0; right:0;
+    background:var(--paper); border-bottom:1px solid var(--rule);
+    flex-direction:column; padding:16px 24px; gap:14px;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
 }
 
-.profile-img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:4px;
-  border:1px solid var(--border);
-}
+/* ---- Hero ---- */
+.hero{padding:72px 0 56px; border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center}
+@media (max-width:760px){ .hero-grid{grid-template-columns:1fr; gap:32px} }
 
-h1{
-  font-size:34px;
-  margin:0 0 6px 0;
+.hero-top{display:flex; align-items:center; gap:18px; margin-bottom:6px}
+.avatar{
+  width:84px; height:84px; border-radius:50%; object-fit:cover;
+  border:1px solid var(--rule); flex-shrink:0; background:var(--accent-soft);
 }
+.eyebrow{font-size:14px; color:var(--accent); margin:0 0 10px}
+.hero-top .eyebrow{margin:0 0 4px}
+.hero-top h1{font-size:clamp(28px,4.5vw,40px)}
+.hero h1{font-size:clamp(32px,5vw,44px); letter-spacing:-0.01em}
+.hero .role{color:var(--muted); font-size:17px; margin:12px 0 20px; max-width:34ch}
+.hero p.lede{max-width:52ch; margin:0 0 24px}
+.hero-links{display:flex; flex-wrap:wrap; gap:10px}
+.btn{
+  display:inline-block; padding:9px 16px; border-radius:var(--radius);
+  border:1px solid var(--rule); color:var(--ink); font-size:14.5px;
+}
+.btn:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+.btn.primary{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.btn.primary:hover{opacity:0.85; color:var(--paper)}
+html.dark .btn.primary{background:var(--accent); border-color:var(--accent); color:#14161a}
 
-h2{
-  font-size:20px;
-  margin-top:50px;
-  border-bottom:1px solid var(--border);
-  padding-bottom:6px;
+.tokenviz{
+  border:1px solid var(--rule); border-radius:var(--radius);
+  padding:22px 20px; background:color-mix(in srgb, var(--ink) 3%, transparent);
 }
+.tokenviz .tv-label{font-size:12.5px; color:var(--muted); margin-bottom:14px}
+.tv-line{display:flex; flex-wrap:wrap; gap:7px; font-family:"IBM Plex Mono",monospace; font-size:14px}
+.tv-line span{
+  padding:3px 7px; border:1px solid var(--rule); border-radius:2px;
+  transition:background var(--dur) ease, border-color var(--dur) ease, color var(--dur) ease;
+}
+.tv-line span.hit{background:var(--token-soft); border-color:var(--token); color:var(--token)}
+.tv-note{font-size:12.5px; color:var(--muted); margin-top:14px; line-height:1.5}
 
-a{
-  color:var(--link);
-  text-decoration:none;
-}
+/* ---- Sections ---- */
+section{padding:52px 0}
+section + section{border-top:1px solid var(--rule)}
+.section-label{font-size:13.5px; color:var(--accent); margin:0 0 6px}
+.section-title{font-size:24px; margin-bottom:22px}
 
-a:hover{
-  text-decoration:underline;
-}
+.focus-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 28px}
+@media (max-width:640px){ .focus-grid{grid-template-columns:1fr} }
+.focus-item h3{font-size:16px; font-weight:600; margin-bottom:6px}
+.focus-item p{margin:0; color:var(--muted); font-size:15px}
 
-.meta{
-  color:var(--muted);
-  font-size:14px;
+/* ---- Timeline ---- */
+.timeline{position:relative; padding-left:22px; border-left:1px solid var(--rule)}
+.tl-item{position:relative; padding-bottom:30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:""; position:absolute; left:-27px; top:5px;
+  width:9px; height:9px; border-radius:50%; background:var(--accent);
 }
+.tl-date{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--muted)}
+.tl-role{font-size:16.5px; font-weight:600; margin:4px 0 2px}
+.tl-org{color:var(--muted); font-size:14.5px; margin-bottom:8px}
+.tl-item ul{margin:0; padding-left:18px; font-size:15px}
+.tl-item li{margin-bottom:4px}
 
-ul{
-  padding-left:18px;
+/* ---- Projects ---- */
+.proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media (max-width:640px){ .proj-grid{grid-template-columns:1fr} }
+.proj-card{
+  border:1px solid var(--rule); border-radius:var(--radius); padding:18px;
 }
+.proj-card h3{font-size:16.5px; font-weight:600; margin-bottom:8px}
+.proj-card p{font-size:14.5px; color:var(--muted); margin:0 0 12px}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px}
+.tag{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--muted);
+  border:1px solid var(--rule); border-radius:2px; padding:2px 6px;
+}
+.proj-card a{font-size:14px}
 
-.paper-img{
-  width:100%;
-  max-width:650px;
-  margin-top:15px;
-  border:1px solid var(--border);
-  border-radius:6px;
-}
+/* ---- Publications ---- */
+.pub{padding:16px 0; border-top:1px solid var(--rule)}
+.pub:first-child{border-top:none; padding-top:0}
+.pub-venue{font-size:12.5px; color:var(--muted); font-family:"IBM Plex Mono",monospace}
+.pub h3{font-size:16.5px; font-weight:600; margin:4px 0 6px}
+.pub p{margin:0; font-size:14.5px; color:var(--muted)}
 
-.footer{
-  margin-top:80px;
-  font-size:13px;
-  color:var(--muted);
-}
+/* ---- Education / Skills ---- */
+.edu-item{margin-bottom:16px}
+.edu-item:last-child{margin-bottom:0}
+.edu-item h3{font-size:16px; font-weight:600}
+.edu-item p{margin:2px 0 0; color:var(--muted); font-size:14.5px}
 
-@media(max-width:700px){
-  .header{flex-direction:column;}
-  .profile-img{width:130px;height:130px;}
-}
+.skill-row{display:flex; gap:14px; margin-bottom:10px; font-size:14.5px}
+.skill-row:last-child{margin-bottom:0}
+.skill-cat{min-width:120px; color:var(--muted); flex-shrink:0}
+
+/* ---- Footer ---- */
+footer{padding:44px 0 60px}
+.foot-links{display:flex; flex-wrap:wrap; gap:18px; margin-bottom:14px; font-size:15px}
+footer p{color:var(--muted); font-size:13.5px; margin:0}
 </style>
 </head>
-
 <body>
-<div class="wrap">
 
-<div class="header">
-  <img src="6c6c50ef-7adc-43a4-bbfa-8f677296b545-compressed.JPG" alt="Arshad Mulla" class="profile-img">
-
-  <div>
-    <h1>Arshad Mulla</h1>
-    <p class="meta">
-      Applied AI & NLP Researcher<br>
-      Large Language Models · Retrieval-Augmented Generation · Efficient Transformer Systems
-    </p>
-
-    <p>
-      📄 <a href="ArshadCV.pdf" target="_blank">CV</a> |
-      💻 <a href="https://github.com/arshadmulla" target="_blank">GitHub</a> |
-      🔗 <a href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank">LinkedIn</a> |
-      📧 <a href="mailto:arshadmulla75@gmail.com">arshadmulla75@gmail.com</a>
-    </p>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Arshad Mulla</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </div>
-</div>
+</nav>
 
-<h2>About</h2>
-<p>
-I am an applied AI researcher focused on large language models (LLMs), retrieval-augmented generation (RAG), 
-and hardware-aware Transformer optimization. My work explores how scalable language systems can be made efficient, 
-reliable, and grounded in structured knowledge.
-</p>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-top">
+        <img src="profile.jpg" alt="Arshad Mulla" class="avatar">
+        <div>
+          <p class="eyebrow">Barcelona, Spain</p>
+          <h1>Arshad Mulla</h1>
+        </div>
+      </div>
+      <p class="role">Applied AI &amp; NLP researcher working on large language models, retrieval-augmented generation, and efficient Transformer systems.</p>
+      <p class="lede">I'm an MSc student in Intelligent Interactive Systems at Universitat Pompeu Fabra, building toward a research career in NLP — with a focus on making language systems efficient, grounded, and trustworthy.</p>
+      <div class="hero-links">
+        <a class="btn primary" href="https://github.com/arshadmulla" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:arshadmulla75@gmail.com">Email</a>
+      </div>
+    </div>
 
-<ul>
-<li>Efficient Transformer inference & mixed precision optimization</li>
-<li>Retrieval-Augmented Generation architectures</li>
-<li>LLM evaluation, detection & reliability</li>
-<li>Trustworthy and controllable generative models</li>
-</ul>
+    <div class="tokenviz">
+      <p class="tv-label">// how a language model reads this sentence</p>
+      <div class="tv-line" id="tvLine">
+        <span>Large</span><span>language</span><span>models</span><span>compress</span><span>meaning</span><span>into</span><span>tokens</span><span>,</span><span>one</span><span>fragment</span><span>at</span><span>a</span><span>time</span><span>.</span>
+      </div>
+      <p class="tv-note">A rough sketch of tokenization — the first step in every pipeline I build, and the layer where a lot of my research questions start.</p>
+    </div>
+  </div>
+</header>
 
-<h2>Education</h2>
-<p>
-<strong>B.Sc. in Computer Science</strong><br>
-Royal College — University of Mumbai (2021–2024)
-</p>
+<section id="about">
+  <div class="wrap">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Research focus</h2>
+    <p style="max-width:62ch; color:var(--muted); margin-bottom:26px">
+      My work looks at how large language models can be made faster to run, better grounded in real knowledge,
+      and easier to trust. That spans hardware-aware inference, retrieval architectures, and methods for
+      evaluating what a model actually knows versus what it's making up.
+    </p>
+    <div class="focus-grid">
+      <div class="focus-item">
+        <h3>Efficient Transformer inference</h3>
+        <p>Benchmarking and mixed-precision optimization across CPU and accelerator backends.</p>
+      </div>
+      <div class="focus-item">
+        <h3>Retrieval-augmented generation</h3>
+        <p>Architectures that ground generation in structured, up-to-date knowledge sources.</p>
+      </div>
+      <div class="focus-item">
+        <h3>LLM evaluation &amp; detection</h3>
+        <p>Methods for measuring reliability, and for telling human writing from machine writing.</p>
+      </div>
+      <div class="focus-item">
+        <h3>Trustworthy generation</h3>
+        <p>Watermarking and controllability techniques for safer, more accountable model outputs.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Research Experience</h2>
+<section id="experience">
+  <div class="wrap">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've worked</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <p class="tl-date">Sep 2025 — Present</p>
+        <p class="tl-role">Technical Program Analyst — AI &amp; Data</p>
+        <p class="tl-org">Growfitter (GoToUniversity)</p>
+        <ul>
+          <li>Built LLM-driven automation pipelines for a 1,000+ entry global university database.</li>
+          <li>Improved data reliability by ~40% through structured retrieval and evaluation workflows.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">Aug 2025 — Dec 2025</p>
+        <p class="tl-role">AI Researcher (Freelance)</p>
+        <p class="tl-org">TheSoul Publishing</p>
+        <ul>
+          <li>Built NLP classification models to detect AI-generated content in production.</li>
+          <li>Studied linguistic signals in human–AI co-creation pipelines.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">Aug 2025 — Sep 2025</p>
+        <p class="tl-role">AI Research Intern</p>
+        <p class="tl-org">XLEX Batteries</p>
+        <ul>
+          <li>Led a 4-person team building a domain-specific RAG chatbot with FAISS retrieval and LLM re-ranking.</li>
+          <li>Reduced internal query resolution time by ~45%.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">Jan 2025 — Aug 2025</p>
+        <p class="tl-role">Data Annotation Specialist (Freelance)</p>
+        <p class="tl-org">Outlier.ai</p>
+        <ul>
+          <li>Annotated and validated text, image, and video datasets for NLP and CV model training.</li>
+          <li>Refined labeling guidelines and QA protocols alongside data scientists.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>
-<strong>Technical Program Analyst — AI & Data</strong>, GoToUniversity 
-<span class="meta">(Sep 2025 – Present)</span>
-</p>
-<ul>
-<li>Designed LLM-driven automation pipelines for a 1K+ global university database.</li>
-<li>Improved data reliability by ~40% using structured retrieval workflows and evaluation metrics.</li>
-</ul>
+<section id="projects">
+  <div class="wrap">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Research &amp; engineering</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <h3>Domain-specific RAG system</h3>
+        <p>Production-oriented retrieval-augmented generation with vector search and LLM-based response re-ranking.</p>
+        <div class="tags"><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">FAISS</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span></div>
+        <a href="https://github.com/arshadmulla" target="_blank" rel="noopener">View code →</a>
+      </div>
+      <div class="proj-card">
+        <h3>Multi-agent AI research assistant</h3>
+        <p>Autonomously retrieves and analyzes arXiv papers using collaborative LLM agents for planning, retrieval, and critique.</p>
+        <div class="tags"><span class="tag">LangChain</span><span class="tag">Groq API</span><span class="tag">ChromaDB</span><span class="tag">NetworkX</span><span class="tag">Streamlit</span></div>
+        <a href="https://github.com/arshadmulla/multi-agent-ai-research-assistant" target="_blank" rel="noopener">View repository →</a>
+      </div>
+      <div class="proj-card">
+        <h3>Neural watermarking for trustworthy LLMs</h3>
+        <p>Greenlist-based watermarking for abstractive summarization; studied trade-offs between watermark strength, detectability, and summary quality.</p>
+        <div class="tags"><span class="tag">BART</span><span class="tag">Transformers</span><span class="tag">ROUGE</span></div>
+        <a href="Watermarking_Summarization_Report_Arshad_Mulla_Final.pdf" target="_blank" rel="noopener">Read report →</a>
+      </div>
+      <div class="proj-card">
+        <h3>Efficient Transformer inference benchmarking</h3>
+        <p>Replicated and extended a CPU-vs-accelerator BERT study across CPU and Apple MPS backends with mixed precision.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">BERT</span><span class="tag">DistilBERT</span><span class="tag">RoBERTa</span><span class="tag">FP16</span></div>
+        <a href="https://github.com/arshadmulla" target="_blank" rel="noopener">View repository →</a>
+      </div>
+      <div class="proj-card">
+        <h3>Generative AI health analytics app</h3>
+        <p>Multimodal analytics interface combining structured reasoning with LLM outputs, built for response reliability.</p>
+        <div class="tags"><span class="tag">Streamlit</span><span class="tag">Gemini API</span><span class="tag">Python</span></div>
+      </div>
+      <div class="proj-card">
+        <h3>Robot navigation (reinforcement learning)</h3>
+        <p>Combined computer vision, sensor fusion, and RL for autonomous navigation; improved path accuracy by ~30%.</p>
+        <div class="tags"><span class="tag">Computer Vision</span><span class="tag">Sensor Fusion</span><span class="tag">RL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>
-<strong>AI Researcher (Freelance)</strong>, TheSoul Publishing 
-<span class="meta">(Aug 2025 – Dec 2025)</span>
-</p>
-<ul>
-<li>Developed NLP-based AI-generated content detection systems.</li>
-<li>Studied linguistic signals in human–AI co-creation pipelines.</li>
-</ul>
+<section id="publications">
+  <div class="wrap">
+    <p class="section-label">Publications</p>
+    <h2 class="section-title">Papers &amp; presentations</h2>
+    <div class="pub">
+      <p class="pub-venue">Journal of Emerging Technologies and Novel Research (JETNR), 2023</p>
+      <h3>Robot Navigation using Reinforcement Learning and Sensor Fusion</h3>
+      <p>Presented at Avishkar 2023. <a href="research-paper.pdf" target="_blank" rel="noopener">Read the paper →</a></p>
+    </div>
+  </div>
+</section>
 
-<p>
-<strong>AI Research Intern</strong>, XLEX Batteries 
-<span class="meta">(Aug 2025 – Sep 2025)</span>
-</p>
-<ul>
-<li>Built domain-specific Retrieval-Augmented Generation assistant.</li>
-<li>Reduced internal query latency by ~45% using vector search + LLM re-ranking.</li>
-</ul>
+<section id="education">
+  <div class="wrap">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Background</h2>
+    <div class="edu-item">
+      <h3>MSc, Intelligent Interactive Systems (MIIS)</h3>
+      <p>Universitat Pompeu Fabra (UPF), Barcelona — Sep 2026 – Present</p>
+    </div>
+    <div class="edu-item">
+      <h3>B.Sc. in Computer Science</h3>
+      <p>Royal College of Arts, Science and Commerce — University of Mumbai — Jun 2021 – May 2024</p>
+    </div>
+  </div>
+</section>
 
-<h2>Research & Engineering Projects</h2>
+<section id="skills">
+  <div class="wrap">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Technical toolkit</h2>
+    <div class="skill-row"><span class="skill-cat">Languages</span><span>Python, SQL, JavaScript</span></div>
+    <div class="skill-row"><span class="skill-cat">LLM &amp; GenAI</span><span>Hugging Face Transformers, LangChain, LangGraph, GPT APIs, Gemini API, prompt engineering</span></div>
+    <div class="skill-row"><span class="skill-cat">RAG &amp; retrieval</span><span>FAISS, Pinecone, embedding models, vector search</span></div>
+    <div class="skill-row"><span class="skill-cat">ML &amp; NLP</span><span>PyTorch, TensorFlow, BERT, RoBERTa, BART, scikit-learn</span></div>
+    <div class="skill-row"><span class="skill-cat">Deployment</span><span>FastAPI, Docker, AWS EC2, REST APIs, Git</span></div>
+  </div>
+</section>
 
-<p>
-<strong>Multi-Agent AI Research Assistant</strong><br>
-<span class="meta">LangChain · Groq API · ChromaDB · NetworkX · Streamlit · arXiv API</span><br>
-Built a multi-agent AI system that autonomously retrieves and analyzes research papers from arXiv using collaborative LLM agents.  
-Designed agent roles for planning, research retrieval, summarization, critique, and insight generation.  
+<footer id="contact">
+  <div class="wrap">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="foot-links">
+      <a href="mailto:arshadmulla75@gmail.com">arshadmulla75@gmail.com</a>
+      <a href="https://github.com/arshadmulla" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/arshad-mulla-5b2451229/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p>Based in Barcelona, Spain. Last updated September 2026.</p>
+  </div>
+</footer>
 
-Implemented vector memory using ChromaDB and generated research knowledge graphs using NetworkX to visualize relationships between papers.  
+<script>
+(function(){
+  // Theme toggle — session only, no storage APIs (keeps this safe inside any sandboxed preview)
+  var htmlEl = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function applyTheme(dark){
+    htmlEl.classList.toggle('dark', dark);
+    themeBtn.textContent = dark ? 'Light' : 'Dark';
+  }
+  applyTheme(prefersDark);
+  themeBtn.addEventListener('click', function(){
+    applyTheme(!htmlEl.classList.contains('dark'));
+  });
 
-Developed an interactive research exploration interface using Streamlit for automated literature analysis and trend discovery.
-<br>
-<a href="https://github.com/arshadmulla/multi-agent-ai-research-assistant" target="_blank">
-View Project Repository
-</a>
-</p>
+  // Mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  });
 
-<p>
-<strong>Neural Watermarking for Trustworthy LLMs</strong><br>
-<span class="meta">BART · Hugging Face Transformers · ROUGE · Detection Classifier</span><br>
-Implemented and analyzed greenlist-based watermarking for neural abstractive summarization 
-(CNN/DailyMail dataset). Studied trade-offs between watermark strength, detectability (F1), 
-and summarization quality (ROUGE-L).
-<br>
-<a href="Watermarking_Summarization_Report_Arshad_Mulla_Final (2).pdf" target="_blank">
-View Research Report (PDF)
-</a>
-</p>
+  // Scroll-spy on nav links
+  var sections = ['about','experience','projects','publications','contact'].map(function(id){
+    return document.getElementById(id);
+  }).filter(Boolean);
+  var links = Array.prototype.slice.call(navLinks.querySelectorAll('a'));
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        links.forEach(function(l){ l.classList.remove('active'); });
+        var match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
+        if(match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(function(s){ spy.observe(s); });
 
-<p>
-<strong>Domain-Specific Retrieval-Augmented Generation System</strong><br>
-<span class="meta">LangChain · LangGraph · FAISS · GPT APIs · FastAPI · Docker · AWS</span><br>
-Designed and deployed a production-oriented RAG architecture integrating vector databases, 
-embedding models, and LLM-based response re-ranking. Optimized latency and retrieval grounding 
-for structured enterprise knowledge systems.
-<br>
-<a href="https://github.com/arshadmulla" target="_blank">View Code</a>
-</p>
+  // One orchestrated token-highlight sweep on load (not looping, not on every hover)
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduceMotion){
+    var tokens = document.querySelectorAll('#tvLine span');
+    tokens.forEach(function(span, i){
+      setTimeout(function(){
+        span.classList.add('hit');
+        setTimeout(function(){ span.classList.remove('hit'); }, 500);
+      }, 400 + i * 180);
+    });
+  }
+})();
+</script>
 
-<p>
-<strong>Efficient Transformer Inference Benchmarking</strong><br>
-<span class="meta">PyTorch · BERT · DistilBERT · RoBERTa · Apple MPS · Mixed Precision (FP16)</span><br>
-Systematic benchmarking of hardware-aware Transformer inference across CPU and Apple MPS backends. 
-Analyzed scaling behavior across batch sizes and sequence lengths for deployment trade-off evaluation.
-<br>
-<a href="https://github.com/arshadmulla/BERT_Inference_MPS_vs_CPU.ipynb" target="_blank">
-Repository
-</a>
-</p>
-
-<p>
-<strong>Generative AI Health Analytics Application</strong><br>
-<span class="meta">Streamlit · Gemini API · GPT-based reasoning · Python</span><br>
-Built a multimodal GenAI-powered analytics interface integrating structured reasoning 
-with LLM outputs, emphasizing response reliability and low-latency inference.
-</p>
-
-<h2>Publications</h2>
-
-<p>
-<strong>Robot Navigation using Reinforcement Learning and Sensor Fusion</strong><br>
-Journal of Emerging Technologies and Novel Research (JETNR), 2023<br>
-<a href="research-paper.pdf" target="_blank">View Paper (PDF)</a>
-</p>
-
-<img src="research (1).jpeg" alt="JETNR Publication Certificate" class="paper-img">
-
-<h2>Technical Competencies</h2>
-
-<p>
-<strong>Research Areas:</strong> Large Language Models, Retrieval-Augmented Generation, Efficient Inference, Trustworthy NLP
-</p>
-
-<p>
-<strong>LLM Frameworks:</strong> Hugging Face Transformers, GPT APIs, Gemini API
-</p>
-
-<p>
-<strong>RAG & Retrieval:</strong> LangChain, LangGraph, FAISS, Pinecone
-</p>
-
-<p>
-<strong>Model Architectures:</strong> BERT, RoBERTa, DistilBERT, BART (Encoder–Decoder Transformers)
-</p>
-
-<p>
-<strong>Deployment:</strong> Docker, FastAPI, AWS EC2, REST APIs
-</p>
-
-<p>
-<strong>Programming:</strong> Python, SQL, JavaScript
-</p>
-
-<div class="footer">
-Last updated: March 2026<br>
-© Arshad Mulla
-</div>
-
-</div>
 </body>
 </html>
